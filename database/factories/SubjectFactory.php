@@ -16,9 +16,15 @@ class SubjectFactory extends Factory
      */
     public function definition(): array
     {
+        static $counter = 1;
+
         return [
             'title' => fake()->word(),
-            'lecturer_id' => 3,
+            'lecturer_id' => $counter++,
+            'semester' => fake()->numberBetween(1,8),
+            'academic_year' => "2022/2023",
+            'sks' => fake()->numberBetween(2, 3),
+            
         ];
     }
 }
